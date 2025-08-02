@@ -1,0 +1,75 @@
+body {
+    background-color: #e8d1cc;
+    text-align: center;
+    font-size: 100%;
+    }
+h2 {
+    font-size: 150%;
+}
+h3 {
+    font-size: 130%;
+    color:crimson
+}
+/*Estilos para cada curso*/
+.contenido-curso {
+    border: 2px solid gray; 
+    padding: 10px;
+    margin: 10px auto;
+    display: inline-block;
+    background-color: #f6f9f1;
+    border-radius: 10px;
+  }
+
+  /*Colocar los cursos en horizontal*/
+  .contenedor-cursos {
+    display: flex; /*organiza los elementos en linea*/
+    justify-content: center;
+    gap: 90px; /* espacio entre cursos */
+    flex-wrap: wrap; /* para que se adapten en pantallas pequeñas, si no caben todos en una fila, se pasa alguno a la siguiente */
+    margin-top: 20px;
+  }
+  .curso {
+    max-width: 300px; 
+  }
+  table, th, td {
+    border: 1px solid;
+    padding: 8px;
+  }
+  table{
+    width: 48%;
+    margin:auto;
+  }
+  th {
+    height: 60px;
+  }
+.contacto{
+  text-align: center;
+    background-color: whitesmoke;
+    border: solid 1px;
+    border-radius: 10px;
+    padding: 10px;
+    margin: auto;
+    max-width: 45%;
+}
+
+  .legal{
+    text-align: justify;
+    padding-left: 190px;
+    padding-right: 190px;
+  }
+  
+  /*Ahora aplicaremos código expecíficamente para las pantallas movil*/
+  @media screen and (max-width: 768px) {
+  .contacto {
+    max-width: 90%;
+    word-wrap: break-word; /* Rompe palabras largas como emails */
+  }
+  .legal{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+.faq-question {
+  font-weight: bold;
+  text-align: center;
+}
