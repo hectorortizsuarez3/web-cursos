@@ -46,7 +46,7 @@
 
 <!--Sección de preguntas frecuentes-->
 <h2>Preguntas frecuentes</h2>
-  <div class="legal">
+  <div class="faq">
     <?php
       include 'includes/faq.php';
     ?>
@@ -67,5 +67,10 @@
   include 'includes/legal.php';
   ?>
 </div>
+
+<script 
+  src="assets/js/faq.js">
+</script>
+
 </body>
 </html>

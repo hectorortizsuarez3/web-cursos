@@ -71,5 +71,12 @@ h3 {
 }
 .faq-question {
   font-weight: bold;
+  cursor: pointer;
+}
+.faq {
   text-align: center;
+}
+.faq-answer {
+
+
 }

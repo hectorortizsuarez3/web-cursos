@@ -1,0 +1,14 @@
+document.addEventListener("DOMContentLoaded", function () {
+  const preguntas = document.querySelectorAll('.faq-question');
+
+  preguntas.forEach(pregunta => {
+    pregunta.addEventListener('click', () => {
+      const respuesta = pregunta.nextElementSibling;
+      if (respuesta.hasAttribute('hidden')) {
+        respuesta.removeAttribute('hidden');
+      } else {
+        respuesta.setAttribute('hidden', '');
+      }
+    });
+  });
+});
