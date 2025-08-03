@@ -61,6 +61,16 @@
   ?>
   </div>
 <br>
+
+<!--Nueva sección-->
+<h2>Formulario de contacto</h2>
+<div class="formulario_contacto">
+<?php
+  include 'includes/formulario_contacto.php';
+  ?>
+  </div>
+<br>
+
 <h2>Aviso Legal</h2>
 <div class="legal">
 <?php
