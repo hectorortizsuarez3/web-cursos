@@ -4,7 +4,7 @@ require_once __DIR__ . '/../config/db.php';  // ajusta la ruta si hace falta
 
 // 2) Solo aceptamos POST
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: ../index.html');
+    header('Location: ../index-off.html');
     exit;
 }
 
