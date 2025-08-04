@@ -64,7 +64,7 @@
 
 <!--Nueva sección-->
 <h2>Formulario de contacto</h2>
-<div class="formulario_contacto">
+<div>
 <?php
   include 'includes/formulario_contacto.php';
   ?>
@@ -79,7 +79,12 @@
 </div>
 
 <script 
-  src="assets/js/faq.js">
+  src="assets/faq.js">
+  src="assets/validar_formulario.js">
+</script>
+
+<script 
+  src="assets/validar_formulario.js">
 </script>
 
 </body>

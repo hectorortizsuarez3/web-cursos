@@ -9,11 +9,21 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 // 3) Recoger los datos tal cual vienen
-$nombre   = $_POST['nombre']   ?? '';
-$correo   = $_POST['email']    ?? '';  // tu <input name="email">
+$nombre   = $_POST['nombre']   ?? '';  //toma el nombre o '' si no viene
+$correo   = $_POST['email']    ?? '';  //toma el email o '' si no viene
 $telefono = $_POST['telefono'] ?? '';
 $mensaje  = $_POST['mensaje']  ?? '';
 $horario  = $_POST['horario']  ?? '';
+
+/*Las dos interrogaciones (??) forman el operador null coalescing, y su papel es:
+“Usa el valor de $_POST['email'] si existe y no es null; en caso contrario, usa la cadena vacía ('').” */
+
+/*Osea es equivalente a escribir esto:
+if (isset($_POST['email'])) {
+    $correo = $_POST['email'];
+} else {
+    $correo = '';
+}  */
 
 // 4) Insertar en mensajes_recibidos
 $stmt = $conn->prepare(
