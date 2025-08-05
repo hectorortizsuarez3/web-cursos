@@ -1,5 +1,5 @@
 <form id="contactForm" action ="includes/procesar_formulario.php" method="post" novalidate>  <!--novalidate sirve para desactivar los mensajes por defecto del navegador-->
-    <div class=_"field">
+    <div class="field">
         <input id="nombre" type="text" name="nombre" placeholder="Nombre" required>
         <small class="error" id="error-nombre"></small>  <!--Creo contenedores para escribir el mensaje de error-->
     </div>
