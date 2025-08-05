@@ -53,15 +53,6 @@
   </div>
 <br>
 
-<!--Sección contacto-->
-<h2>Contacto</h2>
-<div class="contacto">
-<?php
-  include 'includes/b_contacto.php';
-  ?>
-  </div>
-<br>
-
 <!--Nueva sección-->
 <h2>Formulario de contacto</h2>
 <div>
