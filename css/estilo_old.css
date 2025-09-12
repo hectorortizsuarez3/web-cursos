@@ -1,0 +1,116 @@
+body {
+    background-color: #e8d1cc;
+    text-align: center;
+    font-size: 100%;
+    }
+h2 {
+    font-size: 150%;
+}
+h3 {
+    font-size: 130%;
+    color:crimson
+}
+/*Estilos para cada curso*/
+.contenido-curso {
+    border: 2px solid gray; 
+    padding: 10px;
+    margin: 10px auto;
+    display: inline-block;
+    background-color: #f6f9f1;
+    border-radius: 10px;
+  }
+
+  /*Colocar los cursos en horizontal*/
+  .contenedor-cursos {
+    display: flex; /*organiza los elementos en linea*/
+    justify-content: center;
+    gap: 90px; /* espacio entre cursos */
+    flex-wrap: wrap; /* para que se adapten en pantallas pequeñas, si no caben todos en una fila, se pasa alguno a la siguiente */
+    margin-top: 20px;
+  }
+  .curso {
+    max-width: 300px; 
+  }
+
+  /*Estilos para la tabla de cursos*/
+  
+  .tabla-cursos {
+    border-collapse: collapse;
+    color: red;
+    width: 90%;
+    margin: 20px auto;
+  }
+  .tabla-cursos th {
+    background-color: #f2f2f2;
+    text-align: left;
+    padding: 12px;
+  }
+  .tabla-cursos td {
+    padding: 10px;
+  }
+
+  .legal{
+    text-align: justify;
+    padding-left: 190px;
+    padding-right: 190px;
+  }
+  
+  /*Ahora aplicaremos código expecíficamente para las pantallas movil*/
+  @media screen and (max-width: 768px) {
+  .contacto {
+    max-width: 90%;
+    word-wrap: break-word; /* Rompe palabras largas como emails */
+  }
+}
+  
+.faq-question {
+  font-weight: bold;
+  cursor: pointer;
+}
+.faq {
+  text-align: center;
+}
+.faq-answer {
+  margin: auto;
+  padding: 10px;
+  border: solid 1px;
+  border-radius: 10px;
+  max-width: 55%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form .field {
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 16px;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  font-family: inherit;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: vertical;
+}
+
+form input[type="submit"] {
+  width: auto;
+  padding: 8px 16px;
+  font-weight: bold;          
+  font-size: 1rem;            
+  cursor: pointer;           
+  border-radius: 5px;        
+  background-color: #f2f2f2; 
+  border: 1px solid #aaa;     
+}
+
+

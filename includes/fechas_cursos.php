@@ -10,7 +10,7 @@ $result = $conn->query($sql);
 
 // Comprobar si hay resultados
 if ($result && $result->num_rows > 0) {
-    echo '<table>';
+    echo '<table class="tabla-cursos">';
     echo '<tr>
             <th>Curso</th>
             <th>Comienzo del curso</th>

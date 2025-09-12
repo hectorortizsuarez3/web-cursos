@@ -6,7 +6,7 @@
   content="Plataforma con cursos de desarrollo web: HTML, CSS, JavaScript y Bases de Datos. Aprende desde cero">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!--Para que se vea bien en dispositivos movil-->
   <title>Web de Cursos</title>
-  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/nuevos-estilos.css?v=1">
 </head>
 <body>
   <h1>Bienvenido a nuestra plataforma de cursos</h1>
@@ -37,11 +37,13 @@
 </div>
 </div>
 <br>
-<p><h2>Resumen de los cursos:</h2>
+
+<h2>Fechas de los cursos:</h2>
+<div>
 <?php
-        include 'includes/resumen_cursos_bbdd.php';
+        include 'includes/fechas_cursos.php';
       ?>
-</p>
+</div>
 <br>
 
 <!--Sección de preguntas frecuentes-->

@@ -1,0 +1,63 @@
+/* ====== Reset básico ====== */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+/* ====== Variables (tema claro, limpio) ====== */
+:root{
+  --bg: #f9fafb;        /* fondo principal muy claro */
+  --fg: #1f2937;        /* texto principal gris oscuro */
+  --muted: #6b7280;     /* texto secundario gris medio */
+  --brand: #2563eb;     /* azul limpio */
+  --card: #ffffff;      /* fondo tarjetas */
+  --border: #e5e7eb;    /* borde sutil gris claro */
+  --radius: 12px;       /* radios suaves */
+}
+
+/* ====== Base ====== */
+body{
+  background: var(--bg);
+  color: var(--fg);
+  font-family: system-ui, sans-serif;
+  line-height: 1.65;
+}
+
+/* ====== Contenedor ====== */
+.container{
+  width: min(1100px, 92vw);
+  margin: 32px auto;
+  padding: 0 16px;
+}
+
+/* ====== Tipografía ====== */
+h1, h2, h3 { line-height: 1.2; margin: 0 0 .75rem; font-weight: 700; }
+h1 { font-size: clamp(2rem, 2vw + 1.5rem, 3rem); }
+h2 { font-size: clamp(1.4rem, 1.5vw + 1rem, 2rem); }
+h3 { font-size: clamp(1.1rem, 1vw + .9rem, 1.5rem); }
+p  { margin: 0 0 1.25rem; color: var(--fg); }
+
+/* ====== Utilidades de espaciado ====== */
+.mt-2{ margin-top: .5rem; } .mt-4{ margin-top: 1rem; } .mt-8{ margin-top: 2rem; }
+.mb-2{ margin-bottom: .5rem; } .mb-4{ margin-bottom: 1rem; } .mb-8{ margin-bottom: 2rem; }
+
+/* ====== Links ====== */
+a{ color: var(--brand); text-decoration: none; font-weight: 500; }
+a:hover{ text-decoration: underline; }
+
+.contenedor-cursos{ /* = .cards */
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(260px, 1fr) );
+  gap: 18px;
+}
+
+.curso{ /* = .card */
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 16px;
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+.curso:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,0,0,.12);
+  border-color: #dbe2ea; /* un sutil cambio de borde en tema claro */
+}
