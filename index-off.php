@@ -9,71 +9,71 @@
   <link rel="stylesheet" href="css/nuevos-estilos.css?v=1">
 </head>
 <body>
-  <h1>Bienvenido a nuestra plataforma de cursos</h1>
+  <header class="hero container mb-8">
+    <h1>Bienvenido a nuestra plataforma de cursos</h1>
+    <p class="mt-2">Aprende desarrollo web con cursos prácticos y orientados a proyectos.</p>
+  </header>
 
-  <h2>Cursos disponibles</h2>
-</br>
-<div class="contenedor-cursos">
-  <div class="curso">
-  <p>
+  <section class="container">
+  <h2 class="mb-4">Cursos disponibles</h2>
+
+  <div class="contenedor-cursos">
+    <div class="curso">
       <?php
         include 'includes/curso_html.php';
       ?>
-  </p>
-</div>
-<div class="curso">
-  <p>
+  </div>
+
+  <div class="curso">
       <?php
         include 'includes/curso_bbdd.php';
       ?>
-  </p>
-</div>
-<div class="curso">
-  <p>
+  </div>
+
+  <div class="curso">
       <?php
         include 'includes/curso_js.php';
       ?>
-  </p>
+  </div>
 </div>
-</div>
-<br>
+</section>
 
-<h2>Fechas de los cursos:</h2>
-<div>
-<?php
+<!--Tabla-resumen de los cursos-->
+<section class="container mt-8">
+  <h2 class="mb-4">Fechas de los cursos:</h2>
+    <?php
         include 'includes/fechas_cursos.php';
-      ?>
-</div>
-<br>
+    ?>
+    </section>
 
 <!--Sección de preguntas frecuentes-->
-<h2>Preguntas frecuentes</h2>
+<section class="container mt-8">
+  <h2 class="mb-4">Preguntas frecuentes</h2>
   <div class="faq">
-    <?php
-      include 'includes/faq.php';
-    ?>
+      <?php
+        include 'includes/faq.php';
+      ?>
   </div>
-<br>
+</section>
 
-<!--Nueva sección-->
-<h2>Formulario de contacto</h2>
-<div>
-<?php
-  include 'includes/formulario_contacto.php';
-  ?>
+<!--Formulario de contacto-->
+<section class="container mt-8">
+    <h2 class="mb-4">Formulario de contacto</h2>
+    <div class="formulario">
+    <?php include 'includes/formulario_contacto.php'; ?>
   </div>
-<br>
+  </section>
 
-<h2>Aviso Legal</h2>
-<div class="legal">
-<?php
-  include 'includes/legal.php';
-  ?>
-</div>
+<!-- LEGAL -->
+  <section class="container mt-8 mb-8">
+    <h2 class="mb-4">Aviso Legal</h2>
+    <div class="legal">
+      <?php include 'includes/legal.php'; ?>
+    </div>
+  </section>
 
 <script 
   src="assets/faq.js">
-  src="assets/validar_formulario.js">
 </script>
 
 <script 

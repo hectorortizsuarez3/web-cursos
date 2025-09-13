@@ -2,7 +2,7 @@
 *, *::before, *::after { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 
-/* ====== Variables (tema claro, limpio) ====== */
+/*Variables css*/
 :root{
   --bg: #f9fafb;        /* fondo principal muy claro */
   --fg: #1f2937;        /* texto principal gris oscuro */
@@ -13,7 +13,7 @@ html, body { margin: 0; padding: 0; }
   --radius: 12px;       /* radios suaves */
 }
 
-/* ====== Base ====== */
+/*Base*/
 body{
   background: var(--bg);
   color: var(--fg);
@@ -21,28 +21,29 @@ body{
   line-height: 1.65;
 }
 
-/* ====== Contenedor ====== */
+/*Contenedor*/
 .container{
   width: min(1100px, 92vw);
   margin: 32px auto;
   padding: 0 16px;
 }
 
-/* ====== Tipografía ====== */
+/*Tipografía*/
 h1, h2, h3 { line-height: 1.2; margin: 0 0 .75rem; font-weight: 700; }
 h1 { font-size: clamp(2rem, 2vw + 1.5rem, 3rem); }
 h2 { font-size: clamp(1.4rem, 1.5vw + 1rem, 2rem); }
 h3 { font-size: clamp(1.1rem, 1vw + .9rem, 1.5rem); }
 p  { margin: 0 0 1.25rem; color: var(--fg); }
 
-/* ====== Utilidades de espaciado ====== */
+/*Espaciado*/
 .mt-2{ margin-top: .5rem; } .mt-4{ margin-top: 1rem; } .mt-8{ margin-top: 2rem; }
 .mb-2{ margin-bottom: .5rem; } .mb-4{ margin-bottom: 1rem; } .mb-8{ margin-bottom: 2rem; }
 
-/* ====== Links ====== */
+/*Links*/
 a{ color: var(--brand); text-decoration: none; font-weight: 500; }
 a:hover{ text-decoration: underline; }
 
+/*Sección cursos*/
 .contenedor-cursos{ /* = .cards */
   display: grid;
   grid-template-columns: repeat( auto-fit, minmax(260px, 1fr) );
@@ -61,3 +62,133 @@ a:hover{ text-decoration: underline; }
   box-shadow: 0 10px 24px rgba(0,0,0,.12);
   border-color: #dbe2ea; /* un sutil cambio de borde en tema claro */
 }
+/*Estilo para el título*/
+.hero{
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 20px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.06);
+}
+.hero p{ color: var(--muted); max-width: 60ch; }
+
+/*Estilos de la tabla*/
+.tabla-cursos{
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: .95rem;
+  border-radius: var(--radius);
+  overflow: hidden; /* redondeo en bordes */
+  box-shadow: 0 4px 10px rgba(0,0,0,.05);
+}
+
+.tabla-cursos thead{
+  background: var(--brand);
+  color: #fff;
+  text-align: left;
+}
+
+.tabla-cursos th,
+.tabla-cursos td{
+  padding: .75rem 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.tabla-cursos tbody tr:hover{
+  background: #f3f4f6; /* gris claro en hover */
+}
+
+/*Formulario*/
+.formulario{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.05);
+  max-width: 760px;
+}
+
+/* Layout vertical con buen espacio */
+.formulario form{
+  display: grid;
+  gap: 14px;
+}
+
+/* Inputs, selects y textarea */
+.formulario input[type="text"],
+.formulario input[type="email"],
+.formulario input[type="tel"],
+.formulario textarea{
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: .7rem .9rem;
+  background: #fff;
+  color: var(--fg);
+  font: inherit;
+  outline: none;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+
+/* Enfoque accesible y claro */
+.formulario input:focus,
+.formulario select:focus,
+.formulario textarea:focus{
+  border-color: color-mix(in srgb, var(--brand) 55%, #ffffff);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--brand) 18%, transparent);
+}
+
+/* Estado inválido */
+.formulario input:invalid,
+.formulario textarea:invalid{
+  border-color: #ef4444;
+}
+
+/* Botones base */
+.boton {
+   display: inline-flex;          /* centra el texto vertical/horizontal */
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  padding: .9rem 1.2rem;  
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1;                /* evita que el texto se “baje” */
+  cursor: pointer;
+  border: 1px solid transparent;
+  text-decoration: none;
+  -webkit-appearance: none;       /* quita estilos nativos */
+  appearance: none;
+  transition: background .2s ease, color .2s ease, border-color .2s ease, transform .15s ease, box-shadow .2s ease;
+}
+
+/* Variante principal */
+.boton-principal{
+  background: var(--brand);
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,.06);
+}
+.boton-principal:hover{
+  background: color-mix(in srgb, var(--brand) 85%, black);
+  transform: translateY(-1px);
+}
+
+/* Botón dentro del formulario: ancho y espaciado */
+.formulario .boton-principal{
+  width: 100%;                /* móvil: ancho completo */
+  margin-top: .5rem;
+}
+
+@media (min-width: 640px){
+  .formulario .boton-principal{
+    width: auto;              /* escritorio: ajustado */
+    min-width: 180px;
+  }
+}
+
+
+
+
+

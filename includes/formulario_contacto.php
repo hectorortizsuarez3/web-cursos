@@ -23,6 +23,7 @@
         <textarea id="horario" name="horario" placeholder="Horario en que podemos contactarle"></textarea>
         <small class="error" id="error-horario"></small>
     </div>
-        
-        <input type="submit" value="Enviar">
+    <div class="campo">
+        <input type="submit" class="boton boton-principal" value="Enviar">
+    </div>
 </form>
