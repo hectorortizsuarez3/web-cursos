@@ -4,7 +4,7 @@ html, body { margin: 0; padding: 0; }
 
 /*Variables css*/
 :root{
-  --bg: #f9fafb;        /* fondo principal muy claro */
+  --bg: #e7ebef;        /* fondo principal muy claro */
   --fg: #1f2937;        /* texto principal gris oscuro */
   --muted: #6b7280;     /* texto secundario gris medio */
   --brand: #2563eb;     /* azul limpio */
@@ -186,6 +186,71 @@ a:hover{ text-decoration: underline; }
     width: auto;              /* escritorio: ajustado */
     min-width: 180px;
   }
+}
+
+/* ====== FAQ (acordeón limpio) ====== */
+.faq{
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  gap: .5rem; /* espacio vertical entre items */
+}
+
+/* Botón/pregunta */
+.faq .faq-question{
+  width: 100%;
+  text-align: left;
+  display: block;
+  background: #fff;
+  color: var(--fg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: .9rem 1rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: border-color .15s ease, box-shadow .15s ease, background .15s ease;
+  -webkit-appearance: none;
+  appearance: none;
+  position: relative;
+}
+
+/* Indicador ▾ a la derecha */
+.faq .faq-question::after{
+  content: "▾";
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform .2s ease, opacity .2s ease;
+  opacity: .7;
+}
+
+/* Panel de respuesta */
+.faq .faq-answer{
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: .9rem 1rem;
+  margin-top: -.4rem; /*Margen negativo para que el panel se pegue al de las preguntas*/
+}
+
+/* Estados visuales cuando la respuesta está visible */
+.faq .faq-question:has(+ .faq-answer:not([hidden])){
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-color: color-mix(in srgb, var(--brand) 35%, var(--border));
+  background: #fff;
+}
+.faq .faq-answer:not([hidden]){
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top: none;
+}
+
+.faq .faq-question:has(+ .faq-answer:not([hidden]))::after{
+  transform: translateY(-50%) rotate(180deg);
+  opacity: .9;
 }
 
 
