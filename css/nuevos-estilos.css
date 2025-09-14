@@ -43,7 +43,18 @@ p  { margin: 0 0 1.25rem; color: var(--fg); }
 a{ color: var(--brand); text-decoration: none; font-weight: 500; }
 a:hover{ text-decoration: underline; }
 
-/*Sección cursos*/
+/*Estilo para el título*/
+.hero{
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 20px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.06);
+}
+.hero p{ color: var(--muted); max-width: 60ch; }
+
+
+/*----------------------------------Sección cursos------------------------------------*/
 .contenedor-cursos{ /* = .cards */
   display: grid;
   grid-template-columns: repeat( auto-fit, minmax(260px, 1fr) );
@@ -62,17 +73,9 @@ a:hover{ text-decoration: underline; }
   box-shadow: 0 10px 24px rgba(0,0,0,.12);
   border-color: #dbe2ea; /* un sutil cambio de borde en tema claro */
 }
-/*Estilo para el título*/
-.hero{
-  background: #ffffff;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 28px 20px;
-  box-shadow: 0 10px 24px rgba(0,0,0,.06);
-}
-.hero p{ color: var(--muted); max-width: 60ch; }
 
-/*Estilos de la tabla*/
+
+/*---------------------Estilos de la tabla---------------------*/
 .tabla-cursos{
   width: 100%;
   border-collapse: collapse;
@@ -99,14 +102,78 @@ a:hover{ text-decoration: underline; }
   background: #f3f4f6; /* gris claro en hover */
 }
 
-/*Formulario*/
+/* -----------------------------Estilos FAQ-------------------------- */
+.faq{
+  
+  margin: 0 auto;
+  display: grid;
+  gap: .5rem; /* espacio vertical entre items */
+}
+
+/* Botón/pregunta */
+.faq .faq-question{
+  width: 100%;
+  text-align: left;
+  display: block;
+  background: #fff;
+  color: var(--fg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: .9rem 1rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: border-color .15s ease, box-shadow .15s ease, background .15s ease;
+  -webkit-appearance: none;
+  appearance: none;
+  position: relative;
+}
+
+/* Indicador ▾ a la derecha */
+.faq .faq-question::after{
+  content: "▾";
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform .2s ease, opacity .2s ease;
+  opacity: .7;
+}
+
+/* Panel de respuesta */
+.faq .faq-answer{
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: .9rem 1rem;
+  margin-top: -.4rem; /*Margen negativo para que el panel se pegue al de las preguntas*/
+}
+
+/* Estados visuales cuando la respuesta está visible */
+.faq .faq-question:has(+ .faq-answer:not([hidden])){
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-color: color-mix(in srgb, var(--brand) 35%, var(--border));
+  background: #fff;
+}
+.faq .faq-answer:not([hidden]){
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top: none;
+}
+
+.faq .faq-question:has(+ .faq-answer:not([hidden]))::after{
+  transform: translateY(-50%) rotate(180deg);
+  opacity: .9;
+}
+
+/*---------------------------Estilos del Formulario----------------------------*/
 .formulario{
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 20px;
   box-shadow: 0 8px 20px rgba(0,0,0,.05);
-  max-width: 760px;
 }
 
 /* Layout vertical con buen espacio */
@@ -188,70 +255,7 @@ a:hover{ text-decoration: underline; }
   }
 }
 
-/* ====== FAQ (acordeón limpio) ====== */
-.faq{
-  max-width: 900px;
-  margin: 0 auto;
-  display: grid;
-  gap: .5rem; /* espacio vertical entre items */
-}
 
-/* Botón/pregunta */
-.faq .faq-question{
-  width: 100%;
-  text-align: left;
-  display: block;
-  background: #fff;
-  color: var(--fg);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: .9rem 1rem;
-  font-weight: 600;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: border-color .15s ease, box-shadow .15s ease, background .15s ease;
-  -webkit-appearance: none;
-  appearance: none;
-  position: relative;
-}
-
-/* Indicador ▾ a la derecha */
-.faq .faq-question::after{
-  content: "▾";
-  position: absolute;
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  transition: transform .2s ease, opacity .2s ease;
-  opacity: .7;
-}
-
-/* Panel de respuesta */
-.faq .faq-answer{
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: .9rem 1rem;
-  margin-top: -.4rem; /*Margen negativo para que el panel se pegue al de las preguntas*/
-}
-
-/* Estados visuales cuando la respuesta está visible */
-.faq .faq-question:has(+ .faq-answer:not([hidden])){
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-  border-color: color-mix(in srgb, var(--brand) 35%, var(--border));
-  background: #fff;
-}
-.faq .faq-answer:not([hidden]){
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  border-top: none;
-}
-
-.faq .faq-question:has(+ .faq-answer:not([hidden]))::after{
-  transform: translateY(-50%) rotate(180deg);
-  opacity: .9;
-}
 
 
 
