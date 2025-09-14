@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
       id: 'nombre',
       errorId: 'error-nombre',
       test: v => v.length >= 2,
-      msg: 'El nombre debe tener al menos 2 letras'
+      msg: 'El nombre no puede estar vacío'
     },
     {
       id: 'email',
