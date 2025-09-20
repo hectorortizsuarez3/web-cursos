@@ -65,7 +65,7 @@
   </section>
 
 <!-- LEGAL -->
-  <section class="container mt-8 mb-8">
+  <section class="container">
     <h2 class="mb-4">Aviso Legal</h2>
     <div class="legal">
       <?php include 'includes/legal.php'; ?>
@@ -77,7 +77,11 @@
 </script>
 
 <script 
-  src="assets/validar_formulario.js">
+  src="assets/validar_formulario.js" defer>
+</script>
+
+<script 
+  src="assets/modal.js">
 </script>
 
 </body>

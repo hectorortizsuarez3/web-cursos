@@ -10,10 +10,16 @@ $result = $conn->query($sql);
 
 // Verificar si la consulta devolvió al menos una fila
 if ($result && $result->num_rows > 0) {
-    // Obtener la primera fila como un array asociativo
-    $row = $result->fetch_assoc();
+     $texto = trim($result->fetch_assoc()['texto']);
 
-    // Generar el contenido HTML para mostrar el texto legal
-    echo '<p>' . nl2br(htmlspecialchars($row["texto"])) . '</p>';
+    // Dividir el texto por saltos de línea
+    $parrafos = preg_split('/\r\n|\r|\n/', $texto);
+
+    foreach ($parrafos as $p) {
+        $p = trim($p);
+        if ($p !== '') {
+            echo '<p>' . htmlspecialchars($p) . '</p>';
+        }
+    }
 }
 ?>
