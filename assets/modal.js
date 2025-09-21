@@ -40,9 +40,15 @@
     // (Opcional mejora A11y: devolver foco al botón que abrió el modal)
   }
 
-  // Cierre por botón, fondo y teclado (ESC)
+  // Cierre por botón, fondo (al clickar fuera de la caja de diálogo) y teclado (ESC)
   closeEl.addEventListener('click', closeModal);
-  backdrop.addEventListener('click', closeModal);
+
+  modal.addEventListener('click', (e) => {
+  if (!e.target.closest('.modal__dialog')) {
+    closeModal();
+  }
+  });
+
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeModal();
   });

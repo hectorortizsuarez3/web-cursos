@@ -321,8 +321,8 @@ font-size: 0.75rem;
 }
 .btn:hover{ transform: translateY(-1px); box-shadow: 0 10px 20px rgba(0,0,0,.08); }
 .btn.primary{ background: var(--brand); color: #fff; border-color: transparent; }
-.btn.ghost{ background: transparent; }
-.btn.sm{ padding: 8px 12px; font-weight: 600; }
+.btn.sm{ padding: 8px 12px; font-weight: 600;
+}
 
 
 
