@@ -1,16 +1,13 @@
 // Modal genérico reutilizable
-// - Crea un único modal y backdrop al cargar.
-// - Abre por delegación con [data-modal-target] y llena el cuerpo desde un <template>.
-// - Accesible: role="dialog", aria-modal, cierre por ESC / backdrop / botón.
 (function () {
-  // ----- Creación de nodos base -----
+  // Crear nodos base
   const backdrop = document.createElement('div');
   backdrop.className = 'modal-backdrop';
 
   const modal = document.createElement('div');
   modal.className = 'modal';
-  modal.setAttribute('role', 'dialog');     // A11y: anuncia diálogo
-  modal.setAttribute('aria-modal', 'true'); // A11y: modal bloquea la página
+  modal.setAttribute('role', 'dialog');
+  modal.setAttribute('aria-modal', 'true');
 
   modal.innerHTML = `
     <div class="modal__dialog" role="document">
@@ -22,40 +19,34 @@
     </div>
   `;
 
-  // Montaje en DOM
+  // Montar en DOM
   document.body.appendChild(backdrop);
   document.body.appendChild(modal);
 
-  // Referencias internas
+  // Referencias
   const titleEl = modal.querySelector('.modal__title');
   const bodyEl  = modal.querySelector('.modal__body');
   const closeEl = modal.querySelector('.modal__close');
 
-  // ----- Comportamiento: cerrar -----
+  // Cierre
   function closeModal() {
     modal.classList.remove('is-open');
     backdrop.classList.remove('is-open');
-    bodyEl.innerHTML = '';                      // Evita “fantasmas” entre aperturas
-    titleEl.textContent = 'Detalles del curso'; // Título por defecto
-    // (Opcional mejora A11y: devolver foco al botón que abrió el modal)
+    bodyEl.innerHTML = '';
+    titleEl.textContent = 'Detalles del curso';
+    document.body.classList.remove('no-scroll');
   }
 
-  // Cierre por botón, fondo (al clickar fuera de la caja de diálogo) y teclado (ESC)
+  // Eventos de cierre
   closeEl.addEventListener('click', closeModal);
-
   modal.addEventListener('click', (e) => {
-  if (!e.target.closest('.modal__dialog')) {
-    closeModal();
-  }
+    if (!e.target.closest('.modal__dialog')) closeModal();
   });
-
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeModal();
   });
 
-  // ----- Apertura por delegación -----
-  // Cualquier click en un elemento (o hijo) con [data-modal-target]
-  // abrirá el modal con el contenido del <template> indicado.
+  // Apertura delegada
   document.addEventListener('click', (e) => {
     const btn = e.target.closest('[data-modal-target]');
     if (!btn) return;
@@ -70,8 +61,8 @@
 
     backdrop.classList.add('is-open');
     modal.classList.add('is-open');
-
-    // (Opcional mejora A11y: mover foco al primer elemento interactivo del modal)
+    document.body.classList.add('no-scroll');
   });
 })();
+
 
